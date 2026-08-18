@@ -34,7 +34,7 @@ func main() {
 	relay.Info.Name = "wt khatru relay"
 	relay.Info.Description = "Nostr relay powered by khatru for wt geohash channel"
 	relay.Info.Software = "github.com/fiatjaf/khatru"
-	relay.Info.NIPs = []int{1, 2, 9, 11, 15, 16, 20, 22, 28, 33, 40, 42}
+	relay.Info.SupportedNIPs = []int{1, 2, 9, 11, 15, 16, 20, 22, 28, 33, 40, 42}
 
 	// 存储回调：入库 / 查询 / 计数 / 删除 / 替换
 	relay.StoreEvent = append(relay.StoreEvent, db.SaveEvent)
