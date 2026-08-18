@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -46,12 +45,8 @@ func main() {
 	// 注入一组安全、合理的默认策略
 	policies.ApplySaneDefaults(relay)
 
-	// 自定义 HTTP 处理器（如欢迎页、健康检查）
+	// 额外 HTTP 处理器（根路径由 khatru 原生处理：WebSocket 升级 + NIP-11）
 	mux := relay.Router()
-	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("content-type", "text/plain")
-		fmt.Fprintf(w, "wt khatru relay ready.\n")
-	})
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
