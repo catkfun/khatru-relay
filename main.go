@@ -38,7 +38,7 @@ func main() {
 	relay.Info.Description = "Nostr relay powered by khatru for wt geohash channel"
 	relay.Info.Software = "github.com/fiatjaf/khatru"
 	relay.Info.Contact = "kai19961201@gmail.com"
-	relay.Info.PubKey = "0246a89ac79bf254797a64432603bb6dc3d6ccb1d43be486c636e5e9f2f2512bf3"
+	relay.Info.PubKey = "f6c24a8a503917702514e9812b4b91b692c13937e0d24cbffa4e9bd814ad9091"
 	relay.Info.SupportedNIPs = []any{1, 2, 9, 11, 15, 16, 20, 22, 28, 33, 40, 42}
 
 	// 实时状态统计：进程启动时间 + 已保存事件计数（原子，避免并发竞争）
